@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <!-- Columna nombre -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+    <!-- Columna apellidos -->
+    <ng-container matColumnDef="apellidos">
+        <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+    </ng-container>
+
+    <!-- Columna edad -->
+    <ng-container matColumnDef="edad">
+        <th mat-header-cell *matHeaderCellDef> Edad </th>
+        <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+    </ng-container>
+
+    <!-- Columna curso -->
+    <ng-container matColumnDef="curso">
+        <th mat-header-cell *matHeaderCellDef> Curso </th>
+        <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
+    </ng-container>
+
+    <!-- Columna edit -->
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Editar </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon class="blue" aria-hidden="false" aria-label="Example home icon">edit</mat-icon></td>
+    </ng-container>
+
+      <!-- Columna eliminar -->
+      <ng-container matColumnDef="trash">
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon class="rojo" aria-hidden="false" aria-label="Example home icon">delete</mat-icon></td>
+    </ng-container>
+ 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
