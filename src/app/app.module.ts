@@ -9,11 +9,16 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { MatTableModule } from '@angular/material/table' 
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
+import { DeleteButton } from './button-delete/delete.button';
+import {MatButtonModule} from '@angular/material/button';
+import { EditButton } from './button-edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TablaComponent
+    TablaComponent,
+    DeleteButton,
+    EditButton
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
     CdkTableModule,
     MatTableModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

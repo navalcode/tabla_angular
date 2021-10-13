@@ -22,19 +22,17 @@
     <!-- Columna curso -->
     <ng-container matColumnDef="curso">
         <th mat-header-cell *matHeaderCellDef> Curso </th>
-        <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.curso}}  </td>
     </ng-container>
 
-    <!-- Columna edit -->
-    <ng-container matColumnDef="acciones">
+    <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef> Editar </th>
-        <td mat-cell *matCellDef="let element"> <mat-icon class="blue" aria-hidden="false" aria-label="Example home icon">edit</mat-icon></td>
+        <td mat-cell *matCellDef="let element" class="edit"> <app-edit ></app-edit> </td>
     </ng-container>
 
-      <!-- Columna eliminar -->
-      <ng-container matColumnDef="trash">
-        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-        <td mat-cell *matCellDef="let element"> <mat-icon class="rojo" aria-hidden="false" aria-label="Example home icon">delete</mat-icon></td>
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> borrar </th>
+        <td mat-cell *matCellDef="let element" class="delete"> <app-delete ></app-delete> </td>
     </ng-container>
  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
