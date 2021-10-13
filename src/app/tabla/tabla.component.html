@@ -27,12 +27,12 @@
 
     <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef> Editar </th>
-        <td mat-cell *matCellDef="let element" class="edit"> <app-edit ></app-edit> </td>
+        <td mat-cell *matCellDef="let element" class="edit"> <div class="boton"><app-edit ></app-edit></div> </td>
     </ng-container>
 
     <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef> borrar </th>
-        <td mat-cell *matCellDef="let element" class="delete"> <app-delete ></app-delete> </td>
+        <td mat-cell *matCellDef="let element" class="delete"> <div class="boton"><app-delete ></app-delete></div> </td>
     </ng-container>
  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
