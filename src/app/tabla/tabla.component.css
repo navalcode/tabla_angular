@@ -1,10 +1,17 @@
 table {
-    width: 100%;
-  }
-  
-.rojo{
+  width: 100%;
+}
+
+.rojo {
   color: rgb(250, 71, 71);
 }
-.blue{
+.blue {
   color: rgb(29, 119, 255);
+}
+.boton {
+  transform: scale(0.8, 0.8);
+  -ms-transform: scale(0.8, 0.8); /* IE 9 */
+  -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
+  -o-transform: scale(0.8, 0.8); /* Opera */
+  -moz-transform: scale(0.8, 0.8); /* Firefox */
 }
