@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 
 export interface PeriodicElement {
   id: String;
@@ -7,6 +7,7 @@ export interface PeriodicElement {
   edad: number;
   curso:string;
 }
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {id: '1',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
@@ -26,7 +27,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['tabla.component.css'],
   templateUrl: 'tabla.component.html',
 })
+
 export class TablaComponent {
+
   displayedColumns: string[] = ['id','nombre', 'apellidos', 'edad', 'curso','edit','delete'];
   dataSource = ELEMENT_DATA;
+
+  id:boolean = true;
+  nombre:boolean= true;
+  apellidos:boolean= true;
+  curso:boolean= true;
+  edad:boolean= true;
+  editar:boolean= true;
+  delete:boolean= true;
+
 }
