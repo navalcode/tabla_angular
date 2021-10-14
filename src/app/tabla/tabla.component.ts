@@ -10,11 +10,11 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {id: '1',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
-  {id: '2',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
-  {id: '3',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
-  {id: '4',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
-  {id: '5',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'},
-  {id: '6',nombre: 'Pedro', apellidos: 'Gomara Lopez', edad: 22, curso: '2º DAM'}
+  {id: '2',nombre: 'Jose', apellidos: 'Ortega y Gassete', edad: 21, curso: '2º DAM'},
+  {id: '3',nombre: 'Ainara', apellidos: 'De los rios vazquez', edad: 22, curso: '2º DAM'},
+  {id: '4',nombre: 'Mateo', apellidos: 'Gillen Gillen', edad: 25, curso: '2º DAM'},
+  {id: '5',nombre: 'Alejandro', apellidos: 'Castro Polanco', edad: 21, curso: '2º DAM'},
+  {id: '6',nombre: 'Julia', apellidos: 'San Jose Khamer', edad: 21, curso: '2º DAM'}
 
 ];
 
