@@ -1,48 +1,52 @@
 
+<mat-checkbox [checked]="idChecked" (change)="saveformId()" ([ngModel])="idChecked"  >Id</mat-checkbox>
+<mat-checkbox [checked]="nombreChecked" (change)="saveformNombre()" ([ngModel])="nombreChecked" >Nombre</mat-checkbox>
+<mat-checkbox [checked]="apellidosChecked" (change)="saveformApellidos()" ([ngModel])="apellidosChecked" >Apellidos</mat-checkbox>
+<mat-checkbox [checked]="cursoChecked" (change)="saveformCurso()" ([ngModel])="cursoChecked" >Curso</mat-checkbox>
+<mat-checkbox [checked]="edadChecked" (change)="saveformEdad()" ([ngModel])="edadChecked" >Edad</mat-checkbox>
+<mat-checkbox [checked]="editarChecked" (change)="saveformEditar()" ([ngModel])="editarChecked" >Editar</mat-checkbox>
+<mat-checkbox [checked]="deleteChecked" (change)="saveformDelete()" ([ngModel])="deleteChecked" >Delete</mat-checkbox>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Columna nombre -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>
-      <mat-checkbox [checked]="idChecked" ([ngModel])="idChecked"  >Id</mat-checkbox>
-    </th>
-
+    <th mat-header-cell *matHeaderCellDef>  </th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
 
   <!-- Columna nombre -->
   <ng-container matColumnDef="nombre">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="nombreChecked" ([ngModel])="nombreChecked" >Nombre</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
   </ng-container>
 
   <!-- Columna apellidos -->
   <ng-container matColumnDef="apellidos">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="apellidosChecked" ([ngModel])="apellidosChecked" >Apellidos</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">{{ element.apellidos }}</td>
   </ng-container>
 
   <!-- Columna edad -->
   <ng-container matColumnDef="edad">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="edadChecked" ([ngModel])="edadChecked" >Edad</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">{{ element.edad }}</td>
   </ng-container>
 
   <!-- Columna curso -->
   <ng-container matColumnDef="curso">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="cursoChecked" ([ngModel])="cursoChecked" >Curso</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">{{ element.curso }}</td>
   </ng-container>
   <!--Columna boton editar-->
   <ng-container matColumnDef="edit">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="editarChecked" ([ngModel])="editarChecked" >Editar</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element" class="boton">
       <app-edit></app-edit>
     </td>
   </ng-container>
   <!--Columna boton borrar-->
   <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef><mat-checkbox [checked]="deleteChecked" ([ngModel])="deleteChecked" >Delete</mat-checkbox></th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element" class="boton">
       <app-delete></app-delete>
     </td>
