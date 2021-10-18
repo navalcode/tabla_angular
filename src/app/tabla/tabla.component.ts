@@ -30,7 +30,7 @@ const ELEMENT_DATA: alumno[] = [
 })
 
 export class TablaComponent {
-
+  displayedOriginalColumns: string[] = ['id','nombre', 'apellidos', 'edad', 'curso','edit','delete'];
   displayedColumns: string[] = ['id','nombre', 'apellidos', 'edad', 'curso','edit','delete'];
   dataSource = ELEMENT_DATA;
 
@@ -42,93 +42,13 @@ export class TablaComponent {
   editarChecked:boolean= true;
   deleteChecked:boolean= true;
 
-saveformId(){
-  let indice =this.displayedColumns.indexOf('id');
-  if(this.idChecked){
-    this.displayedColumns.splice(indice,1);
-    this.idChecked=false;
-
-  }else{
-    this.displayedColumns.splice(0,0,'id')
-    this.idChecked=true;
+  checkboxChange(isChecked: boolean, columnName: string) {
+    if(isChecked) {
+      this.displayedColumns.splice(this.displayedOriginalColumns.indexOf(columnName), 0, columnName);
+    } else {
+      this.displayedColumns.splice(this.displayedColumns.indexOf(columnName), 1);
+    }
+    console.log(this.displayedColumns);
   }
-
-}
-saveformNombre(){
-  let indice =this.displayedColumns.indexOf('nombre');
-  if(this.nombreChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.nombreChecked=false;
-
-  }else{
-    this.displayedColumns.splice(1,0,'nombre')
-    this.nombreChecked=true;
-  }
-}
-
-saveformApellidos(){
-  let indice =this.displayedColumns.indexOf('apellidos');
-  if(this.apellidosChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.apellidosChecked=false;
-
-  }else{
-    this.displayedColumns.splice(2,0,'apellidos')
-    this.apellidosChecked=true;
-  }
-}
-
-saveformCurso(){
-  let indice =this.displayedColumns.indexOf('curso');
-  if(this.cursoChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.cursoChecked=false;
-
-  }else{
-    this.displayedColumns.splice(3,0,'curso')
-    this.cursoChecked=true;
-  }
-}
-
-saveformEdad(){
-  let indice =this.displayedColumns.indexOf('edad');
-  if(this.edadChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.edadChecked=false;
-
-  }else{
-    this.displayedColumns.splice(4,0,'edad')
-    this.edadChecked=true;
-  }
-}
-saveformEditar(){
-  let indice =this.displayedColumns.indexOf('edit');
-  if(this.editarChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.editarChecked=false;
-
-  }else{
-    this.displayedColumns.splice(5,0,'edit')
-    this.editarChecked=true;
-  }
-}
-
-saveformDelete(){
-  let indice =this.displayedColumns.indexOf('delete');
-  if(this.deleteChecked){
-
-    this.displayedColumns.splice(indice,1);
-    this.deleteChecked=false;
-
-  }else{
-    this.displayedColumns.splice(6,0,'delete')
-    this.deleteChecked=true;
-  }
-}
 
 }

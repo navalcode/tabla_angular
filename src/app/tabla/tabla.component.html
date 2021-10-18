@@ -1,11 +1,11 @@
 
-<mat-checkbox [checked]="idChecked" (change)="saveformId()" ([ngModel])="idChecked"  >Id</mat-checkbox>
-<mat-checkbox [checked]="nombreChecked" (change)="saveformNombre()" ([ngModel])="nombreChecked" >Nombre</mat-checkbox>
-<mat-checkbox [checked]="apellidosChecked" (change)="saveformApellidos()" ([ngModel])="apellidosChecked" >Apellidos</mat-checkbox>
-<mat-checkbox [checked]="cursoChecked" (change)="saveformCurso()" ([ngModel])="cursoChecked" >Curso</mat-checkbox>
-<mat-checkbox [checked]="edadChecked" (change)="saveformEdad()" ([ngModel])="edadChecked" >Edad</mat-checkbox>
-<mat-checkbox [checked]="editarChecked" (change)="saveformEditar()" ([ngModel])="editarChecked" >Editar</mat-checkbox>
-<mat-checkbox [checked]="deleteChecked" (change)="saveformDelete()" ([ngModel])="deleteChecked" >Delete</mat-checkbox>
+<mat-checkbox [checked]="true" (change)="checkboxChange($event.checked, 'id')">Id</mat-checkbox>
+<mat-checkbox [checked]="nombreChecked" (change)="checkboxChange($event.checked, 'nombre')" ([ngModel])="nombreChecked" >Nombre</mat-checkbox>
+<mat-checkbox [checked]="apellidosChecked" (change)="checkboxChange($event.checked, 'apellidos')" ([ngModel])="apellidosChecked" >Apellidos</mat-checkbox>
+<mat-checkbox [checked]="edadChecked" (change)="checkboxChange($event.checked, 'edad')" ([ngModel])="edadChecked" >Edad</mat-checkbox>
+<mat-checkbox [checked]="cursoChecked" (change)="checkboxChange($event.checked, 'curso')" ([ngModel])="cursoChecked" >Curso</mat-checkbox>
+<mat-checkbox [checked]="editarChecked" (change)="checkboxChange($event.checked, 'edit')" ([ngModel])="editarChecked" >Editar</mat-checkbox>
+<mat-checkbox [checked]="deleteChecked" (change)="checkboxChange($event.checked, 'delete')" ([ngModel])="deleteChecked" >Delete</mat-checkbox>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Columna nombre -->
