@@ -1,3 +1,8 @@
-<button mat-fab color="warn">
-    <mat-icon>delete</mat-icon>
+<button
+  mat-stroked-button
+  type="button"
+  [attr.aria-label]="label"
+  (click)="trigger($event)"
+>
+  {{ i18n.t("remove") }}
 </button>

@@ -1,1 +1,9 @@
-<tabla-componente> </tabla-componente>
+<a class="skip" href="#main">{{ i18n.t("skip") }}</a>
+<header>
+  <div class="header-inner">
+    <span class="brand">{{ i18n.t("brand") }}</span>
+    <app-language-switch></app-language-switch>
+  </div>
+</header>
+<main id="main" tabindex="-1"><tabla-componente></tabla-componente></main>
+<footer>{{ i18n.t("footer") }}</footer>

@@ -1,38 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { A11yModule } from '@angular/cdk/a11y';
+import { AppComponent } from './app.component';
 import { TablaComponent } from './tabla/tabla.component';
-import {CdkTableModule} from '@angular/cdk/table';
-import { MatTableModule } from '@angular/material/table'
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatIconModule} from '@angular/material/icon';
-import { DeleteButton } from './button-delete/delete.button';
-import {MatButtonModule} from '@angular/material/button';
 import { EditButton } from './button-edit/edit.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DeleteButton } from './button-delete/delete.button';
+import { LanguageSwitchComponent } from './language-switch.component';
+import { StudentEditorComponent } from './editor/student-editor.component';
+import { ConfirmRemoveComponent } from './editor/confirm-remove.component';
+
+const reducedMotion =
+  typeof window !== 'undefined' &&
+  !!window.matchMedia &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 @NgModule({
   declarations: [
     AppComponent,
-    DeleteButton,
+    TablaComponent,
     EditButton,
-    TablaComponent
+    DeleteButton,
+    LanguageSwitchComponent,
+    StudentEditorComponent,
+    ConfirmRemoveComponent
   ],
   imports: [
-    AppRoutingModule,
-    BrowserAnimationsModule,
     BrowserModule,
-    CdkTableModule,
+    BrowserAnimationsModule.withConfig({ disableAnimations: reducedMotion }),
+    ReactiveFormsModule,
+    MatTableModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatIconModule,
-    MatNativeDateModule,
-    MatTableModule
+    MatDialogModule,
+    A11yModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

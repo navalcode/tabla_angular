@@ -1,0 +1,43 @@
+@use "@angular/material" as mat;
+@include mat.core();
+$copper: (
+  50: #faf1ec,
+  100: #f2e3db,
+  200: #e2bbae,
+  300: #cc937f,
+  400: #b76d53,
+  500: #9b432f,
+  600: #8d3d2b,
+  700: #7c3525,
+  800: #662d20,
+  900: #4a2119,
+  contrast: (
+    50: #202421,
+    100: #202421,
+    200: #202421,
+    300: #202421,
+    400: #202421,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($copper),
+      accent: mat.define-palette($copper),
+      warn: mat.define-palette($copper)
+    ),
+    typography: mat.define-typography-config(
+        $font-family: "Outfit, sans-serif"
+      )
+  )
+);
+@include mat.core-theme($theme);
+@include mat.table-theme($theme);
+@include mat.button-theme($theme);
+@include mat.checkbox-theme($theme);
+@include mat.dialog-theme($theme);

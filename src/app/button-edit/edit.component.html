@@ -1,5 +1,9 @@
-<div class="example-button-container">
-    <button mat-fab color="primary">
-        <mat-icon>edit</mat-icon>
-    </button>
-</div>
+<button
+  mat-flat-button
+  color="primary"
+  type="button"
+  [attr.aria-label]="label"
+  (click)="trigger($event)"
+>
+  {{ i18n.t("edit") }}
+</button>

@@ -1,0 +1,134 @@
+<div class="dialog-heading">
+  <h2 mat-dialog-title>{{ i18n.t('editTitle') }}</h2>
+  <app-language-switch></app-language-switch>
+</div>
+<p class="record-note">{{ i18n.t('record', { id: student.id }) }}</p>
+<form
+  #editor
+  [formGroup]="form"
+  (ngSubmit)="save()"
+  novalidate
+  autocomplete="off"
+>
+  <mat-dialog-content>
+    <p>{{ i18n.t('required') }}</p>
+    <section
+      #errorSummary
+      class="error-summary"
+      tabindex="-1"
+      aria-labelledby="editor-errors"
+      *ngIf="submitted && form.invalid"
+    >
+      <h3 id="editor-errors">{{ i18n.t('review') }}</h3>
+      <ul>
+        <ng-container *ngFor="let field of fields">
+          <li *ngIf="form.controls[field].invalid">
+            <a
+              [href]="'#edit-' + field"
+              (click)="$event.preventDefault(); focus(field)"
+            >
+              {{ i18n.t(field) }}: {{ i18n.t(errorKey(field)) }}
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+    </section>
+    <div class="editor-grid">
+      <div class="field">
+        <label for="edit-firstName">{{ i18n.t('firstName') }}</label>
+        <p id="edit-firstName-hint" class="hint">{{ i18n.t('nameHint') }}</p>
+        <input
+          cdkFocusInitial
+          id="edit-firstName"
+          formControlName="firstName"
+          required
+          maxlength="80"
+          [attr.aria-invalid]="invalid('firstName') ? true : null"
+          [attr.aria-describedby]="
+            invalid('firstName')
+              ? 'edit-firstName-hint edit-firstName-error'
+              : 'edit-firstName-hint'
+          "
+        />
+        <p
+          id="edit-firstName-error"
+          class="field-error"
+          *ngIf="invalid('firstName')"
+        >
+          {{ i18n.t('nameError') }}
+        </p>
+      </div>
+      <div class="field">
+        <label for="edit-lastName">{{ i18n.t('lastName') }}</label>
+        <p id="edit-lastName-hint" class="hint">{{ i18n.t('nameHint') }}</p>
+        <input
+          id="edit-lastName"
+          formControlName="lastName"
+          required
+          maxlength="80"
+          [attr.aria-invalid]="invalid('lastName') ? true : null"
+          [attr.aria-describedby]="
+            invalid('lastName')
+              ? 'edit-lastName-hint edit-lastName-error'
+              : 'edit-lastName-hint'
+          "
+        />
+        <p
+          id="edit-lastName-error"
+          class="field-error"
+          *ngIf="invalid('lastName')"
+        >
+          {{ i18n.t('nameError') }}
+        </p>
+      </div>
+      <div class="field full">
+        <label for="edit-age">{{ i18n.t('age') }}</label>
+        <p id="edit-age-hint" class="hint">{{ i18n.t('ageHint') }}</p>
+        <input
+          id="edit-age"
+          formControlName="age"
+          type="number"
+          required
+          min="0"
+          max="120"
+          step="1"
+          [attr.aria-invalid]="invalid('age') ? true : null"
+          [attr.aria-describedby]="
+            invalid('age') ? 'edit-age-hint edit-age-error' : 'edit-age-hint'
+          "
+        />
+        <p id="edit-age-error" class="field-error" *ngIf="invalid('age')">
+          {{ i18n.t('ageError') }}
+        </p>
+      </div>
+      <div class="field full">
+        <label for="edit-course">{{ i18n.t('course') }}</label>
+        <p id="edit-course-hint" class="hint">{{ i18n.t('courseHint') }}</p>
+        <input
+          id="edit-course"
+          formControlName="course"
+          required
+          maxlength="40"
+          [attr.aria-invalid]="invalid('course') ? true : null"
+          [attr.aria-describedby]="
+            invalid('course')
+              ? 'edit-course-hint edit-course-error'
+              : 'edit-course-hint'
+          "
+        />
+        <p id="edit-course-error" class="field-error" *ngIf="invalid('course')">
+          {{ i18n.t('courseError') }}
+        </p>
+      </div>
+    </div>
+    <p class="dialog-note">{{ i18n.t('sessionOnly') }}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button type="button" (click)="cancel()">
+      {{ i18n.t('cancel') }}
+    </button>
+    <button mat-flat-button color="primary" type="submit">
+      {{ i18n.t('save') }}
+    </button>
+  </mat-dialog-actions>
+</form>

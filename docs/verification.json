@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-30",
+  "source_base": "c0cc40ddab62875e76f6b436df602c47dc319680",
+  "environment": {
+    "os": "macOS",
+    "node": "14.21.3 x64 with existing Rosetta",
+    "npm": "6.14.18",
+    "angular_cli": "12.2.9",
+    "karma": "6.3.4",
+    "browser": "Chrome 156 through CUA"
+  },
+  "production_build": {
+    "exit_code": 0,
+    "hash": "066a80ccc0aae15032c9",
+    "initial_kb": 473.89,
+    "warning_budget_kb": 500
+  },
+  "tests": {
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0,
+    "runner": "Local Karma/Jasmine with manually connected browser",
+    "command": "npm run test:manual"
+  },
+  "browser_checks": {
+    "document_horizontal_overflow": false,
+    "table_mobile_scroll_width": 884,
+    "table_mobile_client_width": 320,
+    "save_updates_row_and_preserves_id": true,
+    "invalid_age_and_course_save_preserves_row": true,
+    "summary_focus_and_field_link": true,
+    "language_preserves_draft_errors_and_columns": true,
+    "cancel_and_escape_preserve_row_and_return_focus": true,
+    "confirm_cancel_does_not_remove": true,
+    "confirm_remove_removes_only_target": true,
+    "remove_all_counts": [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "empty_state_and_reset_to_six_original_students": true,
+    "reset_discards_edits": true,
+    "reload_resets_data_columns_and_spanish_language": true,
+    "last_data_column_disabled": true,
+    "canonical_column_order_after_reactivation": true,
+    "initial_tab_skip_enter_focuses_main": true,
+    "dialog_tab_and_shift_tab_wrap": true,
+    "mobile_note_reachable": true,
+    "mobile_actions_bottom": 774,
+    "landscape_actions_bottom": 334,
+    "action_and_input_min_height": 48,
+    "outfit_loaded": true,
+    "observed_console_warnings_or_errors": 0
+  },
+  "viewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      360,
+      800
+    ],
+    [
+      800,
+      360
+    ]
+  ],
+  "production_files_served_byte_exact": 11,
+  "interaction_requests_delta": 0,
+  "original_dependency_lock_unchanged": true,
+  "hosted_ci_added": false,
+  "limitations": [
+    "Historical dependency versions retained; no current security certification",
+    "No screen reader, physical-device or formal WCAG audit",
+    "Reduced-motion source guards inspected, OS preference not emulated",
+    "No backend, authentication or persistence"
+  ]
+}
